@@ -1,8 +1,11 @@
 .topheader {
-  background-color: #174c80;
+  background-color: #063852;
 }
 .navbar {
+  /*
   background-color: #174c80;
+  */
+  background-color: #063852;
 }
 .navbar-item {
   color: #fff;

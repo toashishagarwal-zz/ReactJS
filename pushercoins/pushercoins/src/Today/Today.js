@@ -75,22 +75,22 @@ class Today extends Component {
     render() {
         return (
             <div className="today--section container">
-                <h2>Current Price</h2>
-                <div className="columns today--section__box">
-                    <div className="column btc--section">
-                        <h5>INR {this.state.btcprice}</h5>
-                        <p>1 BTC</p>
-                    </div>
-                    <div className="column eth--section">
-                        <h5>INR {this.state.ethprice}</h5>
-                        <p>1 ETH</p>
-                    </div>
-                    <div className="column ltc--section">
-                        <h5>INR {this.state.ltcprice}</h5>
-                        <p>1 LTC</p>
+                    <h2>Current Price</h2>
+                    <div className="columns today--section__box">
+                        <div className="column btc--section">
+                            <h5>INR {this.state.btcprice}</h5>
+                            <p>1 BTC</p>
+                        </div>
+                        <div className="column eth--section">
+                            <h5>INR {this.state.ethprice}</h5>
+                            <p>1 ETH</p>
+                        </div>
+                        <div className="column ltc--section">
+                            <h5>INR {this.state.ltcprice}</h5>
+                            <p>1 LTC</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }

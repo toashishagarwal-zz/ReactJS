@@ -11,7 +11,7 @@ class App extends Component {
               <header className="container">
                   <nav className="navbar">
                       <div className="navbar-brand">
-                          <span className="navbar-item">CryptoPrices</span>
+                          <span className="navbar-item"><b>CryptoPrices</b></span>
                       </div>
                       
                   </nav>
