@@ -21,15 +21,15 @@ class History extends Component {
 
     // This function gets the ETH price for a specific timestamp/date. The date is passed in as an argument
     getETHPrices (date) {
-        return axios.get('https://min-api.cryptocompare.com/data/pricehistorical?fsym=ETH&tsyms=USD&ts=' + date);
+        return axios.get('https://min-api.cryptocompare.com/data/pricehistorical?fsym=ETH&tsyms=INR&ts=' + date);
     }
     // This function gets the BTC price for a specific timestamp/date. The date is passed in as an argument
     getBTCPrices (date) {
-        return axios.get('https://min-api.cryptocompare.com/data/pricehistorical?fsym=BTC&tsyms=USD&ts=' + date);
+        return axios.get('https://min-api.cryptocompare.com/data/pricehistorical?fsym=BTC&tsyms=INR&ts=' + date);
     }
     // This function gets the LTC price for a specific timestamp/date. The date is passed in as an argument
     getLTCPrices (date) {
-        return axios.get('https://min-api.cryptocompare.com/data/pricehistorical?fsym=LTC&tsyms=USD&ts=' + date);
+        return axios.get('https://min-api.cryptocompare.com/data/pricehistorical?fsym=LTC&tsyms=INR&ts=' + date);
     }
 
     // This function gets the prices for the current date.
@@ -41,9 +41,9 @@ class History extends Component {
             .then(axios.spread((eth, btc, ltc) => {
                 let f = {
                     date: moment.unix(t).format("MMMM Do YYYY"),
-                    eth: eth.data.ETH.USD,
-                    btc: btc.data.BTC.USD,
-                    ltc: ltc.data.LTC.USD
+                    eth: eth.data.ETH.INR,
+                    btc: btc.data.BTC.INR,
+                    ltc: ltc.data.LTC.INR
                 }
                 // Set the state of todayprice to the content of the object f
                 this.setState({ todayprice: f });
@@ -58,9 +58,9 @@ class History extends Component {
             .then(axios.spread((eth, btc, ltc) => {
                 let f = {
                     date: moment.unix(t).format("MMMM Do YYYY"),
-                    eth: eth.data.ETH.USD,
-                    btc: btc.data.BTC.USD,
-                    ltc: ltc.data.LTC.USD
+                    eth: eth.data.ETH.INR,
+                    btc: btc.data.BTC.INR,
+                    ltc: ltc.data.LTC.INR
                 }
                 // Set the state of yesterdayprice to the content of the object f
                 this.setState({ yesterdayprice: f });
@@ -75,9 +75,9 @@ class History extends Component {
             .then(axios.spread((eth, btc, ltc) => {
                 let f = {
                     date: moment.unix(t).format("MMMM Do YYYY"),
-                    eth: eth.data.ETH.USD,
-                    btc: btc.data.BTC.USD,
-                    ltc: ltc.data.LTC.USD
+                    eth: eth.data.ETH.INR,
+                    btc: btc.data.BTC.INR,
+                    ltc: ltc.data.LTC.INR
                 }
                 // Set the state of twodaysprice to the content of the object f
                 this.setState({ twodaysprice: f });
@@ -92,9 +92,9 @@ class History extends Component {
             .then(axios.spread((eth, btc, ltc) => {
                 let f = {
                     date: moment.unix(t).format("MMMM Do YYYY"),
-                    eth: eth.data.ETH.USD,
-                    btc: btc.data.BTC.USD,
-                    ltc: ltc.data.LTC.USD
+                    eth: eth.data.ETH.INR,
+                    btc: btc.data.BTC.INR,
+                    ltc: ltc.data.LTC.INR
                 }
                 // Set the state of threedaysprice to the content of the object f
                 this.setState({ threedaysprice: f });
@@ -109,9 +109,9 @@ class History extends Component {
             .then(axios.spread((eth, btc, ltc) => {
                 let f = {
                     date: moment.unix(t).format("MMMM Do YYYY"),
-                    eth: eth.data.ETH.USD,
-                    btc: btc.data.BTC.USD,
-                    ltc: ltc.data.LTC.USD
+                    eth: eth.data.ETH.INR,
+                    btc: btc.data.BTC.INR,
+                    ltc: ltc.data.LTC.INR
                 }
                 // Set the state of fourdaysprice to the content of the object f
                 this.setState({ fourdaysprice: f });
@@ -136,13 +136,13 @@ class History extends Component {
                             <h4>{this.state.todayprice.date}</h4>
                             <div className="columns">
                                 <div className="column">
-                                    <p>1 BTC = ${this.state.todayprice.btc}</p>
+                                    <p>1 BTC = INR{this.state.todayprice.btc}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 ETH = ${this.state.todayprice.eth}</p>
+                                    <p>1 ETH = INR{this.state.todayprice.eth}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 LTC = ${this.state.todayprice.ltc}</p>
+                                    <p>1 LTC = INR{this.state.todayprice.ltc}</p>
                                 </div>
                             </div>
                         </div>
@@ -150,13 +150,13 @@ class History extends Component {
                             <h4>{this.state.yesterdayprice.date}</h4>
                             <div className="columns">
                                 <div className="column">
-                                    <p>1 BTC = ${this.state.yesterdayprice.btc}</p>
+                                    <p>1 BTC = INR{this.state.yesterdayprice.btc}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 ETH = ${this.state.yesterdayprice.eth}</p>
+                                    <p>1 ETH = INR{this.state.yesterdayprice.eth}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 LTC = ${this.state.yesterdayprice.ltc}</p>
+                                    <p>1 LTC = INR{this.state.yesterdayprice.ltc}</p>
                                 </div>
                             </div>
                         </div>
@@ -164,13 +164,13 @@ class History extends Component {
                             <h4>{this.state.twodaysprice.date}</h4>
                             <div className="columns">
                                 <div className="column">
-                                    <p>1 BTC = ${this.state.twodaysprice.btc}</p>
+                                    <p>1 BTC = INR{this.state.twodaysprice.btc}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 ETH = ${this.state.twodaysprice.eth}</p>
+                                    <p>1 ETH = INR{this.state.twodaysprice.eth}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 LTC = ${this.state.twodaysprice.ltc}</p>
+                                    <p>1 LTC = INR{this.state.twodaysprice.ltc}</p>
                                 </div>
                             </div>
                         </div>
@@ -178,13 +178,13 @@ class History extends Component {
                             <h4>{this.state.threedaysprice.date}</h4>
                             <div className="columns">
                                 <div className="column">
-                                    <p>1 BTC = ${this.state.threedaysprice.btc}</p>
+                                    <p>1 BTC = INR{this.state.threedaysprice.btc}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 ETH = ${this.state.threedaysprice.eth}</p>
+                                    <p>1 ETH = INR{this.state.threedaysprice.eth}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 LTC = ${this.state.threedaysprice.ltc}</p>
+                                    <p>1 LTC = INR{this.state.threedaysprice.ltc}</p>
                                 </div>
                             </div>
                         </div>
@@ -192,13 +192,13 @@ class History extends Component {
                             <h4>{this.state.fourdaysprice.date}</h4>
                             <div className="columns">
                                 <div className="column">
-                                    <p>1 BTC = ${this.state.fourdaysprice.btc}</p>
+                                    <p>1 BTC = INR{this.state.fourdaysprice.btc}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 ETH = ${this.state.fourdaysprice.eth}</p>
+                                    <p>1 ETH = INR{this.state.fourdaysprice.eth}</p>
                                 </div>
                                 <div className="column">
-                                    <p>1 LTC = ${this.state.fourdaysprice.ltc}</p>
+                                    <p>1 LTC = INR{this.state.fourdaysprice.ltc}</p>
                                 </div>
                             </div>
                         </div>
